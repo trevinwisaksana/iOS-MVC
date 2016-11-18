@@ -1,26 +1,18 @@
 //
 //  Friend.swift
-//  MoodTracker
+//  MoodTracker-starter
 //
-//  Created by Nikolas Burk on 01/11/16.
+//  Created by Trevin Wisaksana on 11/4/16.
 //  Copyright © 2016 Nikolas Burk. All rights reserved.
 //
 
-import Foundation
-
-enum Mood: String {
-  case angry = "😡"
-  case medium = "😑"
-  case happy = "😁"
-}
-
+// MARK: Friend contains the attributes of a friend.
 class Friend {
-  
-  init(name: String, mood: Mood = .happy) {
-    self.name = name
-    self.mood = mood
-  }
-  
-  let name: String
-  var mood: Mood
+    let name: String
+    var mood: Mood
+    
+    init(name: String, mood: Mood) {
+        self.name = name
+        self.mood = mood
+    }
 }

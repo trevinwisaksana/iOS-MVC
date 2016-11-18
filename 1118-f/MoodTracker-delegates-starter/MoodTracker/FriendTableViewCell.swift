@@ -1,46 +1,38 @@
 //
 //  FriendTableViewCell.swift
-//  MoodTracker
+//  MoodTracker-starter
 //
-//  Created by Nikolas Burk on 01/11/16.
+//  Created by Nikolas Burk on 02/11/16.
 //  Copyright © 2016 Nikolas Burk. All rights reserved.
 //
 
 import UIKit
 
-class FriendTableViewCell: UITableViewCell {
-  
-  var moodTableViewController: MoodTableViewController!
-  
-  // outlets
-  @IBOutlet weak var nameLabel: UILabel!
-  @IBOutlet weak var moodDescriptionLabel: UILabel!
-  @IBOutlet weak var moodButton: UIButton!
-  
-  // string constants describing the mood
-  static let happyString = "Oh happy day..."
-  static let badString = "Get off my lawn!!!"
-  static let mediumString = "Well, I don't really care."
-  static let moodDescriptions: [Mood: String] = [
-    Mood.happy: happyString,
-    Mood.medium: mediumString,
-    Mood.angry: badString
-  ]
-  
-  // stores the friend that is represented in this cell
-  var friend: Friend! {
-    didSet {
-      nameLabel.text = friend.name
-      moodDescriptionLabel.text = FriendTableViewCell.moodDescriptions[friend.mood]
-      moodButton.setTitle(friend.mood.rawValue, for: .normal)
-    }
-  }
-  
-  // update mood and label
-  @IBAction func moodButtonPressed(_ sender: AnyObject) {
-    moodTableViewController.updateFriend(friend: friend) // sendf friend to MoodTableViewController
-  }
-
-  
+protocol FriendsTableViewCellDelegate {
+    func updateFriend(friend: Friend, newMood: Mood)
+    func changeMood(mood: Mood) -> Mood
 }
 
+class FriendTableViewCell: UITableViewCell {
+    
+    var delegate: FriendsTableViewCellDelegate!
+    
+    // Declaring a variable of type Friend
+    var friend: Friend!
+    
+    // This is conneted to the name label on the FriendTableViewCell.
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    // This is connected to the status label on the the FriendTableViewCell.
+    @IBOutlet weak var statusLabel: UILabel!
+    
+    // This is connected to the mood button but does not carry an action.
+    @IBOutlet weak var moodButtonOutlet: UIButton!
+    
+    // moodButtionAction sends an instruction to the View Controller to change the mood when tapped
+    @IBAction func moodButtonAction(_ sender: Any) {
+        let newMood = delegate.changeMood(mood: friend!.mood)
+        delegate.updateFriend(friend: friend, newMood: newMood)
+    }
+    
+}
