@@ -16,20 +16,22 @@ enum CalculatorState {
     case multiplication
 }
 
-protocol CalculationsDataDelegate {
-    func sendCalculations(calculations: Calculations)
-}
-
-class CalculateViewController: UIViewController {
+class CalculateViewController: UIViewController, CalculationsDataDelegate {
+    
+    func sendCalculations(calculations: String) -> Calculations {
+        let newCalculation = Calculations(calculation: calculations)
+        return newCalculation
+    }
     
     // MARK: - Objects
 
     /// Array used to contain the numbers used to make calculations
     var calculatingNumbersArray = [Int]()
-    /// Delegate assigned as type CalculationsDataDelegate to access the delegate methods
-    var delegate: CalculationsDataDelegate!
     /// Sets the operation of the calculator
     var calculatorState: CalculatorState!
+    /// Stores the result
+    var total: Int!
+    
     
     // MARK: - IBOutlets
     
@@ -49,18 +51,36 @@ class CalculateViewController: UIViewController {
     
     // MARK: - Calcuation Operator Button Actions
     
+    @IBAction func backButton(segue: UIStoryboardSegue) {
+        
+    }
+    
+    
+    @IBAction func seePreviousCalculationsAction(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func clearButtonAction(_ sender: UIButton) {
+        // Clearing up the label
+        resultLabel.text = nil
+        // Clearing the array
+        calculatingNumbersArray.removeAll()
+    }
+    
     @IBAction func equalsButtonAction(_ sender: AnyObject) {
         switch calculatorState! {
         case .division:
-            division(numbers: calculatingNumbersArray)
+            let result = division(numbers: calculatingNumbersArray)
+            total = result
         case .addition:
-            multiplicationOrAddition(numbers: calculatingNumbersArray, operation: +)
+            let result = multiplicationOrAddition(numbers: calculatingNumbersArray, operation: +)
+            total = result
         case .multiplication:
-            multiplicationOrAddition(numbers: calculatingNumbersArray, operation: *)
+            let result = multiplicationOrAddition(numbers: calculatingNumbersArray, operation: *)
+            total = result
         case .substraction:
-            substraction(numbers: calculatingNumbersArray)
-        default:
-            break
+            let result = substraction(numbers: calculatingNumbersArray)
+            total = result
         }
     }
     
@@ -94,11 +114,6 @@ class CalculateViewController: UIViewController {
         // Assigning the result to the label
         resultLabel.text = result
         
-        // Assigning the calculation result to a variable
-        let calculation = Calculations(calculation: result)
-        // Sending the calculation to the delegate
-        delegate?.sendCalculations(calculations: calculation)
-        
         return total
     }
     
@@ -120,10 +135,20 @@ class CalculateViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         resultLabel.text = nil
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /// Used to hook the segue to the UINavigationController first
+        let destination = segue.destination as! UINavigationController
+        /// Hooks the UINavigationController to the CalculationsTableViewController
+        let calculationsTableViewController = destination.viewControllers.first! as! CalculationsTableViewController
+        /// Refers the delegate and set it to be of type calculationsTableViewController
+        calculationsTableViewController.delegate = self
+        
+        /// Using the function to change from String into Calculation class
+        let newCalculation = sendCalculations(calculations: resultLabel.text!)
+        /// Appending new calculations to the calculation list
+        calculationsTableViewController.calculationsList.append(newCalculation)
     }
+
 }
 

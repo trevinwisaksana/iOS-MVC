@@ -12,6 +12,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController, DataSentDelegate, FriendsTableViewCellDelegate {
     
     func userDidCreateFriend(data: Friend) {
+        print("Called")
         friendsList.append(data)
     }
     
@@ -73,6 +74,7 @@ class FriendsTableViewController: UITableViewController, DataSentDelegate, Frien
         let destination = segue.destination as! UINavigationController
         let addFriendViewController = destination.viewControllers.first! as! AddFriendViewController
         addFriendViewController.delegate = self
+        print("used")
     }
     
     // Update friend

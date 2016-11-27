@@ -8,13 +8,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Calculate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="CalculateViewController" customModule="Memorizing_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="CalculateViewController" customModule="Memorizing_Calculator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,7 +73,6 @@
                                 </state>
                                 <connections>
                                     <action selector="multiplicationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxf-bf-RRW"/>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0e-7x-CAr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aER-8I-nnk">
@@ -88,7 +88,7 @@
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3fy-G4-3bx"/>
+                                    <action selector="clearButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdy-5W-hfA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-Pg-d2d">
@@ -102,9 +102,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pSp-fs-9a0"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deM-PO-LEE">
                                 <rect key="frame" x="182" y="213" width="90" height="90"/>
@@ -117,9 +114,6 @@
                                     <color key="titleColor" red="0.95349469980869916" green="1" blue="0.9572493602889639" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AOh-Hy-qPi"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDG-3v-DXM">
                                 <rect key="frame" x="273" y="213" width="102" height="90"/>
@@ -131,7 +125,6 @@
                                 </state>
                                 <connections>
                                     <action selector="divisionButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tWc-nt-bwc"/>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XTB-X5-Gte"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPi-4a-YQ8">
@@ -182,7 +175,6 @@
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxq-FH-5vr"/>
                                     <action selector="substractButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHc-sM-cfB"/>
                                 </connections>
                             </button>
@@ -234,7 +226,6 @@
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7fz-Gm-XrY"/>
                                     <action selector="plusButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v41-mT-MTG"/>
                                 </connections>
                             </button>
@@ -272,7 +263,6 @@
                                 </state>
                                 <connections>
                                     <action selector="equalsButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFK-Yb-AgT"/>
-                                    <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="keF-72-8vV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVd-no-PMA">
@@ -287,7 +277,8 @@
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wfu-S7-yvB" kind="popoverPresentation" popoverAnchorView="zVd-no-PMA" id="9ct-5d-HPl">
+                                    <action selector="seePreviousCalculationsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dj1-bd-Z2o"/>
+                                    <segue destination="RXc-ap-EtA" kind="popoverPresentation" popoverAnchorView="zVd-no-PMA" id="NIe-jW-QHK">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -401,7 +392,6 @@
                     <navigationItem key="navigationItem" id="Jsa-Xx-PJW"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="multiplicationButtonAction" destination="JmH-4a-QEx" id="jdb-YJ-bZy"/>
                         <outlet property="resultLabel" destination="XXP-A3-iMO" id="QcB-oP-4UM"/>
                     </connections>
                 </viewController>
@@ -409,30 +399,35 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Calculations Table View Controller-->
+        <!--Previous Calculations-->
         <scene sceneID="n90-Dn-lPZ">
             <objects>
-                <tableViewController id="VSP-Vp-wN3" customClass="CalculationsTableViewController" customModule="Memorizing_Calculator" sceneMemberID="viewController">
+                <tableViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="VSP-Vp-wN3" customClass="CalculationsTableViewController" customModule="Memorizing_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mfq-aP-h3s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="300" height="236"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gUm-a8-wpd" customClass="CalculationsTableViewCell" customModule="Memorizing_Calculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="28" width="300" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gUm-a8-wpd" id="co8-K3-uKj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-9F-Bbz">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-9F-Bbz">
                                             <rect key="frame" x="19" y="15" width="352" height="39"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mcv-9F-Bbz" firstAttribute="leading" secondItem="co8-K3-uKj" secondAttribute="leadingMargin" constant="11" id="Spg-z8-nmp"/>
+                                        <constraint firstItem="Mcv-9F-Bbz" firstAttribute="centerY" secondItem="co8-K3-uKj" secondAttribute="centerY" id="bdJ-t4-5ve"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Mcv-9F-Bbz" secondAttribute="trailing" constant="-79" id="euc-ch-TFx"/>
+                                        <constraint firstItem="Mcv-9F-Bbz" firstAttribute="top" secondItem="co8-K3-uKj" secondAttribute="topMargin" constant="7" id="mco-U8-KDN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="calculationLabel" destination="Mcv-9F-Bbz" id="gtt-pV-rve"/>
@@ -444,29 +439,43 @@
                             <outlet property="delegate" destination="VSP-Vp-wN3" id="hXN-L6-wg9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="J63-vg-ip5"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Previous Calculations" id="J63-vg-ip5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ZY6-wC-YDl"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Qez-hE-HS3">
+                            <connections>
+                                <segue destination="jyB-EC-0jv" kind="unwind" unwindAction="backButtonWithSegue:" id="4V9-L4-OeP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yar-18-xVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jyB-EC-0jv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2840.8000000000002" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2536" y="139"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ujc-S5-OB3">
+        <scene sceneID="RvA-35-DCp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wfu-S7-yvB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RXc-ap-EtA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgt-fO-8I2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a0K-GL-TaG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VSP-Vp-wN3" kind="relationship" relationship="rootViewController" id="2qN-Rv-J0y"/>
+                        <segue destination="VSP-Vp-wN3" kind="relationship" relationship="rootViewController" id="2TT-An-zdA"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oHm-wA-kuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SG0-vE-x40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1901.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1831.2" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

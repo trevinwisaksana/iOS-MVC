@@ -18,7 +18,7 @@ class AddFriendViewController: UIViewController {
     var moodStatus: Mood!
     
     // Creating a variable of type DataSentDelegate
-    var delegate: DataSentDelegate?
+    var delegate: DataSentDelegate!
 
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -40,7 +40,8 @@ class AddFriendViewController: UIViewController {
         // friend contains the new Friend which the user creates.
         let friend = Friend(name: nameTextField.text!, mood: moodStatus)
         // Passing the friend to the delegate
-        delegate?.userDidCreateFriend(data: friend)
+        delegate.userDidCreateFriend(data: friend)
+        print("DELEGATE: ", delegate)
     }
     
     override func viewDidLoad() {
