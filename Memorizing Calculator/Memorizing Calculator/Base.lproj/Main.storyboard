@@ -71,6 +71,7 @@
                                     <color key="titleShadowColor" red="0.15562844986127125" green="0.6558600001815712" blue="0.86592687075854924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="multiplicationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxf-bf-RRW"/>
                                     <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0e-7x-CAr"/>
                                 </connections>
                             </button>
@@ -129,6 +130,7 @@
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="divisionButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tWc-nt-bwc"/>
                                     <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XTB-X5-Gte"/>
                                 </connections>
                             </button>
@@ -181,6 +183,7 @@
                                 </state>
                                 <connections>
                                     <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxq-FH-5vr"/>
+                                    <action selector="substractButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHc-sM-cfB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1If-Sn-f5t">
@@ -232,6 +235,7 @@
                                 </state>
                                 <connections>
                                     <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7fz-Gm-XrY"/>
+                                    <action selector="plusButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v41-mT-MTG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ik3-y6-JOG">
@@ -267,6 +271,7 @@
                                     <color key="titleShadowColor" red="0.18589979409999999" green="0.74537664650000002" blue="0.97619241479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="equalsButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFK-Yb-AgT"/>
                                     <action selector="operatorButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="keF-72-8vV"/>
                                 </connections>
                             </button>
@@ -396,6 +401,7 @@
                     <navigationItem key="navigationItem" id="Jsa-Xx-PJW"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="multiplicationButtonAction" destination="JmH-4a-QEx" id="jdb-YJ-bZy"/>
                         <outlet property="resultLabel" destination="XXP-A3-iMO" id="QcB-oP-4UM"/>
                     </connections>
                 </viewController>
@@ -416,7 +422,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gUm-a8-wpd" id="co8-K3-uKj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-9F-Bbz">

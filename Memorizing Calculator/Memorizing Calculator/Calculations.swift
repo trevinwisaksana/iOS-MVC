@@ -8,34 +8,15 @@
 
 import UIKit
 
+// Calculations Class is a Model which means it does not play any part in any logical operations.
 class Calculations {
+    /// Contains all the calculations
+    var calculation: String!
     
-    // MARK: - Array
-    var numbersArray = [Int]()
-    
-    var calculation = ""
-    
-    // MARK: - Functions
-    func receiveNumbers(number: Int) {
-        numbersArray.append(number)
+    // Initializing the calculation variable
+    init(calculation: String) {
+        self.calculation = calculation
     }
-
-    func multiplicationOrAddition(numbers: [Int], operation: (Int, Int) -> Int) -> Int {
-        let total = numbers.reduce(1, operation)
-        return total
-    }
-    
-    
-    func division(numbers: [Int]) -> Int {
-        return 0
-    }
-    
-    
-    func substraction(numbers: [Int]) -> Int {
-        let result = numbers[0] - numbers[1]
-        return result
-    }
-    
 }
 
 
