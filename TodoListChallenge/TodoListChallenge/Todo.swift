@@ -10,12 +10,12 @@ import Foundation
 
 class Todo {
     /// Title for each task
-    var taskTitle: String!
+    var taskTitle: String?
     /// Deadline for each task which is Optional
-    var deadline: Date?
+    var deadline: String?
     
     // Initializing the uninitialized variables
-    init(taskTitle: String, deadline: Date) {
+    init(taskTitle: String, deadline: String) {
         self.taskTitle = taskTitle
         self.deadline = deadline
     }

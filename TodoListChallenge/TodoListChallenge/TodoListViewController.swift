@@ -75,7 +75,7 @@ extension TodoListViewController: UICollectionViewDataSource, UICollectionViewDe
         popoverPresentationController?.sourceView = collectionView
         popoverPresentationController?.sourceRect = cell.frame
         
-        // cell.deadlineLabel.text = taskIndex.deadline
+        cell.deadlineLabel.text = taskIndex.deadline
         cell.taskTitleLabel.text = taskIndex.taskTitle
         
         // Curve the edges.

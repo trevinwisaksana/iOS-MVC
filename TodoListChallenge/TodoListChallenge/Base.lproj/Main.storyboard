@@ -172,23 +172,11 @@
                         <viewControllerLayoutGuide type="bottom" id="gHA-4D-shu"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Xhw-qg-Bmp">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="170"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-5D-nol">
-                                <rect key="frame" x="29" y="200" width="242" height="114"/>
-                                <date key="date" timeIntervalSinceReferenceDate="501987858.13562">
-                                    <!--2016-11-28 01:04:18 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="datePickerAction:" destination="V9F-fV-ebU" eventType="valueChanged" id="D18-2u-tH4"/>
-                                </connections>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adr-6v-MfQ">
-                                <rect key="frame" x="131" y="40" width="140" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="Ccj-zE-NJg"/>
-                                </constraints>
+                                <rect key="frame" x="143" y="28" width="140" height="38"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <state key="normal" title="Create new task"/>
                                 <connections>
@@ -197,63 +185,51 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert task title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqB-XL-wyF">
-                                <rect key="frame" x="16" y="63" width="255" height="71"/>
+                                <rect key="frame" x="16" y="70.666666666666671" width="128.33333333333334" height="26"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is it due?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQz-il-xqw">
-                                <rect key="frame" x="16" y="142" width="128" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="5lz-j1-4ym"/>
-                                    <constraint firstAttribute="height" constant="21" id="tv7-d5-0yV"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="100.66666666666669" width="119" height="23.333333333333329"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM1-zF-T9Z">
-                                <rect key="frame" x="16" y="164" width="128" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="fnd-XO-b9S"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert deadline" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2B-cK-Eu8">
+                                <rect key="frame" x="16" y="129" width="133.33333333333334" height="26"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="deadlineTextField:" destination="V9F-fV-ebU" eventType="editingDidBegin" id="Prs-A3-DGh"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.96078431372549022" alpha="0.70232724471830987" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Adr-6v-MfQ" firstAttribute="top" secondItem="Kvs-C4-fbH" secondAttribute="bottom" constant="20" id="8a8-xM-4gI"/>
-                            <constraint firstItem="JQz-il-xqw" firstAttribute="top" secondItem="Adr-6v-MfQ" secondAttribute="bottom" constant="66" id="8jP-an-cwj"/>
-                            <constraint firstItem="ktA-5D-nol" firstAttribute="centerX" secondItem="Xhw-qg-Bmp" secondAttribute="centerX" id="9IY-I9-tPW"/>
-                            <constraint firstItem="ktA-5D-nol" firstAttribute="top" secondItem="aM1-zF-T9Z" secondAttribute="bottom" constant="12" id="9qL-bQ-PQn"/>
-                            <constraint firstItem="ktA-5D-nol" firstAttribute="leading" secondItem="Xhw-qg-Bmp" secondAttribute="leadingMargin" constant="13" id="D8U-Kd-abi"/>
-                            <constraint firstItem="aM1-zF-T9Z" firstAttribute="top" secondItem="JQz-il-xqw" secondAttribute="bottom" constant="1" id="EO3-si-EaM"/>
-                            <constraint firstItem="dqB-XL-wyF" firstAttribute="leading" secondItem="JQz-il-xqw" secondAttribute="leading" id="FDJ-UO-eOI"/>
-                            <constraint firstItem="Adr-6v-MfQ" firstAttribute="trailing" secondItem="dqB-XL-wyF" secondAttribute="trailing" id="FKJ-gh-uG0"/>
-                            <constraint firstItem="gHA-4D-shu" firstAttribute="top" secondItem="ktA-5D-nol" secondAttribute="bottom" constant="36" id="Kgz-wJ-iHs"/>
-                            <constraint firstItem="dqB-XL-wyF" firstAttribute="top" secondItem="Kvs-C4-fbH" secondAttribute="bottom" constant="43" id="Kj3-71-3BP"/>
-                            <constraint firstItem="dqB-XL-wyF" firstAttribute="leading" secondItem="Xhw-qg-Bmp" secondAttribute="leadingMargin" id="NdC-rU-7He"/>
-                            <constraint firstItem="JQz-il-xqw" firstAttribute="trailing" secondItem="aM1-zF-T9Z" secondAttribute="trailing" id="XgT-p8-4Vm"/>
-                            <constraint firstItem="dqB-XL-wyF" firstAttribute="trailing" secondItem="ktA-5D-nol" secondAttribute="trailing" id="ezd-Mm-OUK"/>
-                            <constraint firstItem="JQz-il-xqw" firstAttribute="top" secondItem="dqB-XL-wyF" secondAttribute="bottom" constant="8" symbolic="YES" id="qbS-TJ-cZw"/>
-                            <constraint firstItem="JQz-il-xqw" firstAttribute="leading" secondItem="aM1-zF-T9Z" secondAttribute="leading" id="sm4-oa-KdG"/>
+                            <constraint firstItem="f2B-cK-Eu8" firstAttribute="leading" secondItem="Xhw-qg-Bmp" secondAttribute="leadingMargin" id="Aff-0m-ZuL"/>
+                            <constraint firstItem="JQz-il-xqw" firstAttribute="leading" secondItem="Xhw-qg-Bmp" secondAttribute="leadingMargin" id="LAo-df-aYo"/>
+                            <constraint firstItem="f2B-cK-Eu8" firstAttribute="top" secondItem="JQz-il-xqw" secondAttribute="bottom" constant="5" id="ZeR-UX-ou6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Adr-6v-MfQ" secondAttribute="trailing" constant="1" id="bD0-hJ-My1"/>
+                            <constraint firstItem="gHA-4D-shu" firstAttribute="top" secondItem="f2B-cK-Eu8" secondAttribute="bottom" constant="15" id="bux-ts-M4Q"/>
+                            <constraint firstItem="Adr-6v-MfQ" firstAttribute="top" secondItem="Kvs-C4-fbH" secondAttribute="bottom" constant="8" id="ceU-iC-tRY"/>
+                            <constraint firstItem="dqB-XL-wyF" firstAttribute="leading" secondItem="Xhw-qg-Bmp" secondAttribute="leadingMargin" id="p7O-YZ-Dbx"/>
+                            <constraint firstItem="JQz-il-xqw" firstAttribute="top" secondItem="dqB-XL-wyF" secondAttribute="bottom" constant="4" id="w37-vW-XoI"/>
                         </constraints>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="150"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="300" height="350"/>
+                    <size key="freeformSize" width="300" height="170"/>
                     <connections>
-                        <outlet property="datePickerOutlet" destination="ktA-5D-nol" id="2tv-QX-pdj"/>
-                        <outlet property="deadlineLabel" destination="aM1-zF-T9Z" id="S5Q-m0-bp1"/>
+                        <outlet property="deadlineTextField" destination="f2B-cK-Eu8" id="x44-9k-jMa"/>
                         <outlet property="todoTitleTextField" destination="dqB-XL-wyF" id="0fW-ML-8bB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guf-rM-rUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pok-Bq-KoL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="898" y="-26"/>
+            <point key="canvasLocation" x="897.10144927536237" y="-26.086956521739133"/>
         </scene>
         <!--Todo View Controller-->
         <scene sceneID="lCh-jK-Wmh">

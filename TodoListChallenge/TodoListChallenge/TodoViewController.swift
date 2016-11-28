@@ -23,7 +23,7 @@ class TodoViewController: UIViewController {
     
     @IBOutlet weak var taskTitleLabel: UILabel!
     
-    @IBOutlet weak var deadlineLabel: UILabel!
+    
     
     // MARK: - IBActions
     
