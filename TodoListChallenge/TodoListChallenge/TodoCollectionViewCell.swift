@@ -15,12 +15,15 @@ protocol TodoCellDelegate {
 class TodoCollectionViewCell: UICollectionViewCell {
     
     /// MARK: - IBOutlets
-    @IBOutlet weak var taskTitleTextField: UITextField!
+    
+    @IBOutlet weak var taskTitleLabel: UILabel!
     
     @IBOutlet weak var deadlineLabel: UILabel!
     
     // MARK: - IBActions
     @IBAction func checklistButtonAction(_ sender: Any) {
     }
+    
+    
     
 }
