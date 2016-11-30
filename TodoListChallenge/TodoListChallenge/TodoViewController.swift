@@ -8,14 +8,29 @@
 
 import UIKit
 
-enum CompletionState {
-    case complete, incomplete
+protocol UpdateCompletionButton {
+    func updateCompletionButton(todo: Todo, state: CompletionState)
 }
 
-class TodoViewController: UIViewController {
+class TodoViewController: UIViewController, UpdateTodoDelegate {
+    
+    // Necessary variables
+    var delegate: UpdateCompletionButton!
+    
+    // Necessary Methods
+    func updateTask(task: Todo) {
+        taskTitleLabel.text = task.taskTitle
+        deadlineLabel.text = task.deadline
+    }
     
     // Necessary Objects
-    var state: CompletionState!
+    // var delegate: ViewTodoDelegate!
+    var task: Todo! {
+        didSet {
+            
+        }
+    }
+    
     // Used to identify whether the complete button has been tapped
     var firstTap = false
     
@@ -23,7 +38,7 @@ class TodoViewController: UIViewController {
     
     @IBOutlet weak var taskTitleLabel: UILabel!
     
-    
+    @IBOutlet weak var deadlineLabel: UILabel!
     
     // MARK: - IBActions
     
@@ -31,19 +46,21 @@ class TodoViewController: UIViewController {
         
         // Button status setup to set the default button state
         if firstTap == false {
-            state = .incomplete
+            task.state = .incomplete
             firstTap = true
         }
         
         // Changes the status of the button when pressed
-        if state == .complete {
-            state = .incomplete
+        if task.state == .complete {
+            // task.state = .incomplete
+            delegate.updateCompletionButton(todo: task, state: .incomplete)
         } else {
-            state = .complete
+            // task.state = .complete
+            delegate.updateCompletionButton(todo: task, state: .complete)
         }
         
         // Changes the color and title of the button
-        switch state! {
+        switch task.state! {
         case .complete:
             sender.setTitle("Complete", for: .normal)
             sender.backgroundColor = UIColor(colorLiteralRed: 121/255, green: 222/255, blue: 131/255, alpha: 1)
@@ -55,16 +72,23 @@ class TodoViewController: UIViewController {
     
     
     @IBAction func deleteTaskButtonAction(_ sender: UIButton) {
-        
+        // TODO: Implement delete button
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        taskTitleLabel.text = task.taskTitle
+        deadlineLabel.text = task.deadline
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let todoListViewController = segue.destination as! TodoListViewController
+        todoListViewController.delegate = self
+    }
+    
 }

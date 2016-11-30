@@ -8,21 +8,47 @@
 
 import UIKit
 
-class TodoListViewController: UIViewController, UIPopoverPresentationControllerDelegate, NewTaskDelegate {
+protocol UpdateTodoDelegate {
+    func updateTask(task: Todo)
+}
+
+class TodoListViewController: UIViewController, UIPopoverPresentationControllerDelegate, NewTaskDelegate, TodoCellDelegate, UpdateCompletionButton {
+    
+    // Necessary objects
+    var delegate: UpdateTodoDelegate!
+    var selectedTodoIndex: Int!
+    var state: CompletionState!
     
     // Necessary IBOutlet
     @IBOutlet weak var todoListCollectionViewOutlet: UICollectionView!
     
+    // Necessary methods
     func addNewTask(task: Todo) {
         listOfTask.append(task)
     }
     
-    // Necessary IBAction
-    @IBAction func closePopover(segue: UIStoryboardSegue) {
+    func updateCompletionButton(todo: Todo, state: CompletionState) {
         
     }
     
-    // var collectionView: UICollectionView!
+    func updateTodo(task: Todo, newState: CompletionState) {
+        // Changes the state to change color
+        task.state = newState
+        todoListCollectionViewOutlet.reloadData()
+    }
+    
+    func updateCompletionState(state: CompletionState) -> CompletionState {
+        // When the button is tapped, it changes the state
+        switch state {
+        case .incomplete: return .complete
+        case .complete: return .incomplete
+        }
+    }
+    
+    // Necessary IBAction
+    @IBAction func closePopover(segue: UIStoryboardSegue) {
+        // Used for unwind segue
+    }
     
     var listOfTask = [Todo]() {
         didSet {
@@ -32,8 +58,7 @@ class TodoListViewController: UIViewController, UIPopoverPresentationControllerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,14 +67,17 @@ class TodoListViewController: UIViewController, UIPopoverPresentationControllerD
             addTodoPopover.popoverPresentationController?.delegate = self
             
             // Setting the delegate to this specific view controller
-            let addTodoViewController = segue.destination as! AddTodoViewController
-            addTodoViewController.delegate = self
+            addTodoPopover.delegate = self
             
-        } else {
+        } else if segue.identifier == "viewTodo" {
             let viewTodoPopover = segue.destination as! TodoViewController
             viewTodoPopover.popoverPresentationController?.delegate = self
-        }
         
+            // Used to access each task in the list
+            viewTodoPopover.task = listOfTask[selectedTodoIndex]
+            
+            viewTodoPopover.delegate = self
+        }
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -58,6 +86,7 @@ class TodoListViewController: UIViewController, UIPopoverPresentationControllerD
 
 }
 
+// MARK: - Extension
 
 extension TodoListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -72,17 +101,33 @@ extension TodoListViewController: UICollectionViewDataSource, UICollectionViewDe
     
         let taskIndex = listOfTask[indexPath.row]
         
-        popoverPresentationController?.sourceView = collectionView
-        popoverPresentationController?.sourceRect = cell.frame
-        
         cell.deadlineLabel.text = taskIndex.deadline
         cell.taskTitleLabel.text = taskIndex.taskTitle
+        
+        cell.delegate = self
+        cell.task = taskIndex
+        
+        // Changing the button color and label. When tapped, this is called again.
+        switch taskIndex.state! {
+        case .complete:
+            cell.completionStateButton.backgroundColor = UIColor(colorLiteralRed: 121/255, green: 222/255, blue: 131/255, alpha: 1)
+        case .incomplete:
+            cell.completionStateButton.backgroundColor = UIColor(colorLiteralRed: 48/255, green: 190/255, blue: 249/255, alpha: 1)
+        }
         
         // Curve the edges.
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 13
         
+        popoverPresentationController?.sourceView = collectionView
+        popoverPresentationController?.sourceRect = cell.frame
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        // Used to access the specific cell in the list
+        selectedTodoIndex = indexPath.row
     }
     
 }

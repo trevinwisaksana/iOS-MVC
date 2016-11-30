@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD054D5B1DEBC86E004A1E6E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD054D5A1DEBC86E004A1E6E /* TodoViewController.swift */; };
+		DD9517011DED56AF004685FC /* CompletionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9517001DED56AF004685FC /* CompletionState.swift */; };
 		DDE19F861DEB5C42008C8609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE19F851DEB5C42008C8609 /* AppDelegate.swift */; };
 		DDE19F8B1DEB5C42008C8609 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE19F891DEB5C42008C8609 /* Main.storyboard */; };
 		DDE19F8E1DEB5C42008C8609 /* TodoListChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDE19F8C1DEB5C42008C8609 /* TodoListChallenge.xcdatamodeld */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		DD054D5A1DEBC86E004A1E6E /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		DD9517001DED56AF004685FC /* CompletionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionState.swift; sourceTree = "<group>"; };
 		DDE19F821DEB5C42008C8609 /* TodoListChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE19F851DEB5C42008C8609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE19F8A1DEB5C42008C8609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE1A18D1DEBAB1F008C8609 /* Todo.swift */,
+				DD9517001DED56AF004685FC /* CompletionState.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				DDE1A1911DEBAB9F008C8609 /* TodoListViewController.swift in Sources */,
 				DDE19F861DEB5C42008C8609 /* AppDelegate.swift in Sources */,
 				DD054D5B1DEBC86E004A1E6E /* TodoViewController.swift in Sources */,
+				DD9517011DED56AF004685FC /* CompletionState.swift in Sources */,
 				DDE19F8E1DEB5C42008C8609 /* TodoListChallenge.xcdatamodeld in Sources */,
 				DDE1A1961DEBAF06008C8609 /* TodoCollectionViewCell.swift in Sources */,
 				DDE1A1981DEBBE76008C8609 /* AddTodoViewController.swift in Sources */,

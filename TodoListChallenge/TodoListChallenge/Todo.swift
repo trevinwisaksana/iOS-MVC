@@ -13,11 +13,14 @@ class Todo {
     var taskTitle: String?
     /// Deadline for each task which is Optional
     var deadline: String?
+    /// Completion state
+    var state: CompletionState!
     
     // Initializing the uninitialized variables
-    init(taskTitle: String, deadline: String) {
+    init(taskTitle: String, deadline: String, state: CompletionState) {
         self.taskTitle = taskTitle
         self.deadline = deadline
+        self.state = state
     }
     
 }

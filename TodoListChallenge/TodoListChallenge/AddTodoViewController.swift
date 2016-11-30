@@ -27,18 +27,17 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBAction
     
     @IBAction func createNewTaskButtonAction(_ sender: Any) {
-        let newTodo = Todo(taskTitle: todoTitleTextField.text!, deadline: deadlineTextField.text!)
+        // MARK: Delegate Call
+        let newTodo = Todo(taskTitle: todoTitleTextField.text!, deadline: deadlineTextField.text!, state: .incomplete)
         delegate.addNewTask(task: newTodo)
         
     }
     
-    @IBAction func deadlineTextField(_ sender: Any) {
-        
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Sets up the deadline label to be able to load a UIDatePicker on the keyboard
+        // MARK: Date Picker Setup
         let datePicker = UIDatePicker()
         deadlineTextField.inputView = datePicker
         datePicker.addTarget(self, action: #selector(AddTodoViewController.setDeadline(sender:)), for: .valueChanged)
@@ -46,7 +45,8 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
     
     func setDeadline(sender: UIDatePicker!) {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
         deadlineTextField.text = formatter.string(from: sender.date)
     }
 
