@@ -279,6 +279,7 @@
                                 </state>
                                 <connections>
                                     <action selector="deleteTaskButtonAction:" destination="AtR-aM-6rX" eventType="touchUpInside" id="XZn-WI-609"/>
+                                    <segue destination="y9y-eg-Pii" kind="unwind" unwindAction="deleteCellWithSegue:" id="xIQ-AT-5Ct"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGX-Tn-AQ9">
@@ -328,13 +329,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
                     <connections>
+                        <outlet property="completionStateButton" destination="DGX-Tn-AQ9" id="tvF-aH-Jrb"/>
                         <outlet property="deadlineLabel" destination="OAL-PT-T6B" id="PGC-il-t4Y"/>
                         <outlet property="taskTitleLabel" destination="ctQ-wG-1U8" id="cf7-t9-Uzb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRs-uN-cvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="y9y-eg-Pii" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="897.60000000000002" y="343.62818590704649"/>
+            <point key="canvasLocation" x="1007" y="267"/>
         </scene>
     </scenes>
     <resources>

@@ -12,9 +12,9 @@ protocol UpdateTodoDelegate {
     func updateTask(task: Todo)
 }
 
-class TodoListViewController: UIViewController, UIPopoverPresentationControllerDelegate, NewTaskDelegate, TodoCellDelegate, UpdateCompletionButton {
+class TodoListViewController: UIViewController, UIPopoverPresentationControllerDelegate, NewTaskDelegate, TodoCellDelegate,  UpdateCompletionButton {
     
-    // Necessary objects
+    // MARK: - Necessary objects
     var delegate: UpdateTodoDelegate!
     var selectedTodoIndex: Int!
     var state: CompletionState!
@@ -22,21 +22,25 @@ class TodoListViewController: UIViewController, UIPopoverPresentationControllerD
     // Necessary IBOutlet
     @IBOutlet weak var todoListCollectionViewOutlet: UICollectionView!
     
-    // Necessary methods
+    // MARK: - Necessary methods
     func addNewTask(task: Todo) {
         listOfTask.append(task)
     }
     
-    func updateCompletionButton(todo: Todo, state: CompletionState) {
-        
+    // Allows the completion buttons to change on both the cell and the TodoViewController
+    func updateCompletionButton(task: Todo, updatedState: CompletionState) {
+        task.state = updatedState
+        todoListCollectionViewOutlet.reloadData()
     }
     
+    // Allows the cell button to update the completion state
     func updateTodo(task: Todo, newState: CompletionState) {
         // Changes the state to change color
         task.state = newState
         todoListCollectionViewOutlet.reloadData()
     }
     
+    // Allows the completion state to change
     func updateCompletionState(state: CompletionState) -> CompletionState {
         // When the button is tapped, it changes the state
         switch state {
@@ -45,9 +49,14 @@ class TodoListViewController: UIViewController, UIPopoverPresentationControllerD
         }
     }
     
-    // Necessary IBAction
+    // MARK: - Necessary IBAction
     @IBAction func closePopover(segue: UIStoryboardSegue) {
         // Used for unwind segue
+        
+    }
+    
+    @IBAction func deleteCell(segue: UIStoryboardSegue) {
+        listOfTask.remove(at: selectedTodoIndex)
     }
     
     var listOfTask = [Todo]() {

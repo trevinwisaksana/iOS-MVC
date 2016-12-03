@@ -16,3 +16,28 @@ PlaygroundPage.current.liveView = canvas // make the canvas appear in the assist
  
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
+/* let margin = 50
+let rect = CGRect(x: margin, y: margin, width: Int((canvas.frame.size.width) * 0.5), height: Int((canvas.frame.size.height) * 0.5))
+let view = UIView(frame: rect)
+view.backgroundColor = .red
+canvas.addSubview(view) */
+
+// configure blue
+let redView = UIView(frame: CGRect.zero)
+redView.translatesAutoresizingMaskIntoConstraints = false
+redView.backgroundColor = .red
+canvas.addSubview(redView)
+
+let margin: CGFloat = 50
+// Height
+NSLayoutConstraint(item: redView, attribute: .height, relatedBy: .equal, toItem: canvas, attribute: .height, multiplier: 0.25, constant: margin).isActive = true
+// Width
+NSLayoutConstraint(item: redView, attribute: .width, relatedBy: .equal, toItem: canvas, attribute: .width, multiplier: 0.25, constant: margin).isActive = true
+// Leading
+NSLayoutConstraint(item: redView, attribute: .leading, relatedBy: .equal, toItem: canvas, attribute: .leading, multiplier: 0.5, constant: margin).isActive = true
+// Top
+NSLayoutConstraint(item: redView, attribute: .top, relatedBy: .equal, toItem: canvas, attribute: .top, multiplier: 0.5, constant: margin).isActive = true
+// Bottom
+NSLayoutConstraint(item: redView, attribute: .bottom, relatedBy: .equal, toItem: canvas, attribute: .bottom, multiplier: 0.5, constant: margin).isActive = true
+
+PlaygroundPage.current.liveView = canvas // make the canvas appear in the assistant editor
