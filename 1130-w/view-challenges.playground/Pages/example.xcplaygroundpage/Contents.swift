@@ -24,7 +24,10 @@ PlaygroundPage.current.liveView = canvas // make the canvas appear in the assist
  #### 1st implementation
  */
 // configure blue
+<<<<<<< HEAD
 /*
+=======
+>>>>>>> 1804d074b370b0206976797c4e65f29f0a68c32e
 let margin = 20
 let blueX = margin
 let blueY = margin
@@ -46,11 +49,16 @@ let greenView = UIView(frame: greenFrame)
 greenView.backgroundColor = .green
 canvas.addSubview(greenView)
 
+<<<<<<< HEAD
 greenView.center.y = blueView.center.y */
+=======
+greenView.center.y = blueView.center.y
+>>>>>>> 1804d074b370b0206976797c4e65f29f0a68c32e
 /*:
 #### 2nd implementation
 */
 // configure blue
+<<<<<<< HEAD
 let blueView = UIView(frame: CGRect.zero)
 blueView.translatesAutoresizingMaskIntoConstraints = false
 blueView.backgroundColor = .blue
@@ -73,5 +81,29 @@ NSLayoutConstraint(item: greenView, attribute: .trailing, relatedBy: .equal, toI
 NSLayoutConstraint(item: greenView, attribute: .width, relatedBy: .equal, toItem: blueView, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
 NSLayoutConstraint(item: greenView, attribute: .height, relatedBy: .equal, toItem: blueView, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
 NSLayoutConstraint(item: greenView, attribute: .centerY, relatedBy: .equal, toItem: blueView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+=======
+//let blueView = UIView(frame: CGRect.zero)
+//blueView.translatesAutoresizingMaskIntoConstraints = false
+//blueView.backgroundColor = .blue
+//canvas.addSubview(blueView)
+//
+//let margin: CGFloat = 20
+//NSLayoutConstraint(item: blueView, attribute: .height, relatedBy: .equal, toItem: canvas, attribute: .height, multiplier: 1, constant: (-margin-margin)).isActive = true
+//NSLayoutConstraint(item: blueView, attribute: .width, relatedBy: .equal, toItem: canvas, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
+//NSLayoutConstraint(item: blueView, attribute: .leading, relatedBy: .equal, toItem: canvas, attribute: .leading, multiplier: 1, constant: margin).isActive = true
+//NSLayoutConstraint(item: blueView, attribute: .top, relatedBy: .equal, toItem: canvas, attribute: .top, multiplier: 1, constant: margin).isActive = true
+//NSLayoutConstraint(item: blueView, attribute: .bottom, relatedBy: .equal, toItem: canvas, attribute: .bottom, multiplier: 1, constant: margin).isActive = true
+//
+//// configure green
+//let greenView = UIView(frame: CGRect.zero)
+//greenView.translatesAutoresizingMaskIntoConstraints = false
+//greenView.backgroundColor = .green
+//canvas.addSubview(greenView)
+//
+//NSLayoutConstraint(item: greenView, attribute: .trailing, relatedBy: .equal, toItem: canvas, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
+//NSLayoutConstraint(item: greenView, attribute: .width, relatedBy: .equal, toItem: blueView, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
+//NSLayoutConstraint(item: greenView, attribute: .height, relatedBy: .equal, toItem: blueView, attribute: .width, multiplier: 0.5, constant: 0).isActive = true
+//NSLayoutConstraint(item: greenView, attribute: .centerY, relatedBy: .equal, toItem: blueView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+>>>>>>> 1804d074b370b0206976797c4e65f29f0a68c32e
 
 

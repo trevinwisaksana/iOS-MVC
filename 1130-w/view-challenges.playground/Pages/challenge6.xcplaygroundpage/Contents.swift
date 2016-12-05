@@ -20,6 +20,7 @@ PlaygroundPage.current.liveView = canvas // make the canvas appear in the assist
  
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
+<<<<<<< HEAD
 func creatingSquare(color: UIColor, positionX: Int, positionY: Int, widthValue: Int, heightValue: Int) {
     let sizeAndPosition = CGRect(x: positionX, y: positionY, width: widthValue, height: heightValue)
     let square = UIView(frame: sizeAndPosition)
@@ -29,3 +30,6 @@ func creatingSquare(color: UIColor, positionX: Int, positionY: Int, widthValue: 
 
 creatingSquare(color: .blue, positionX: 20, positionY: 20, widthValue: 100, heightValue: 100)
 creatingSquare(color: .green, positionX: 280, positionY: 80, widthValue: 100, heightValue: 100)
+=======
+
+>>>>>>> 1804d074b370b0206976797c4e65f29f0a68c32e

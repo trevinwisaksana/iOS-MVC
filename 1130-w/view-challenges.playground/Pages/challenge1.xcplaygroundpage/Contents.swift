@@ -16,6 +16,7 @@ PlaygroundPage.current.liveView = canvas // make the canvas appear in the assist
  
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
+<<<<<<< HEAD
 /* let margin = 50
 let rect = CGRect(x: margin, y: margin, width: Int((canvas.frame.size.width) * 0.5), height: Int((canvas.frame.size.height) * 0.5))
 let view = UIView(frame: rect)
@@ -41,3 +42,5 @@ NSLayoutConstraint(item: redView, attribute: .top, relatedBy: .equal, toItem: ca
 NSLayoutConstraint(item: redView, attribute: .bottom, relatedBy: .equal, toItem: canvas, attribute: .bottom, multiplier: 0.5, constant: margin).isActive = true
 
 PlaygroundPage.current.liveView = canvas // make the canvas appear in the assistant editor
+=======
+>>>>>>> 1804d074b370b0206976797c4e65f29f0a68c32e

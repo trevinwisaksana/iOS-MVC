@@ -6,6 +6,7 @@ let canvas = UIView(frame: canvasFrame)
 canvas.backgroundColor = .white
 PlaygroundPage.current.liveView = canvas // make the canvas appear in the assistant editor
 
+
 let colors: [UIColor] = [.green, .gray, .purple, .yellow, .red, .orange, .lightGray, .white, .blue, .cyan]
 
 // var colorArray = []
@@ -13,6 +14,9 @@ let colors: [UIColor] = [.green, .gray, .purple, .yellow, .red, .orange, .lightG
 // func createColors() -> [UIColor] {
 
 // }
+
+
+
 /*:
  **Task**: Create an even grid on the `canvas`, made out of squares that each are one third as wide and one third as high as the `canvas`.Use the same colors as in the picture (they are already defined for you above in the `colors` array):
  
@@ -23,6 +27,7 @@ let colors: [UIColor] = [.green, .gray, .purple, .yellow, .red, .orange, .lightG
  
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
+
 /* func creatingSquare(color: Int, positionX: Int, positionY: Int) {
     let sizeAndPosition = CGRect(x: positionX, y: positionY, width: Int((canvas.frame.size.width) * (1/3)), height: Int((canvas.frame.size.height) * (1/3)))
     let square = UIView(frame: sizeAndPosition)
@@ -91,5 +96,6 @@ for i in 0...8 {
     
     createBoxUsingAutoLayout(marginValue: 0, color: colors[colorIndex], heightMultiplier: heightMultiplierValue, widthMultiplier: widthMultiplierValue, leadingMarginValue: leadingMarginValue, topMarginValue: topMarginValue, bottomMarginValue: bottomMarginValue)
 }
+
 
 

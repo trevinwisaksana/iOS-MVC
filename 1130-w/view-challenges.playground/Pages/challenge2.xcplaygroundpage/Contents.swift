@@ -18,6 +18,7 @@ PlaygroundPage.current.liveView = canvas // make the canvas appear in the assist
  
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
+<<<<<<< HEAD
 /* let widthValue = Int((canvas.frame.size.width) * (1/3))
 let heightValue = Int((canvas.frame.size.height) * (1/3))
 
@@ -70,3 +71,5 @@ createBoxUsingAutoLayout(marginValue: 0, color: .red, heightMultiplier: heightMu
 createBoxUsingAutoLayout(marginValue: 0, color: .red, heightMultiplier: heightMultiplierValue, bottomMultiplier: bottomMultiplierValue, leadingMarginValue: 200, topMarginValue: 200, bottomMarginValue: 0)
 
 
+=======
+>>>>>>> 1804d074b370b0206976797c4e65f29f0a68c32e
