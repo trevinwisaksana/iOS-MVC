@@ -8,11 +8,11 @@ PlaygroundPage.current.liveView = canvas // make the canvas appear in the assist
 
 let colors: [UIColor] = [.green, .gray, .purple, .yellow, .red, .orange, .lightGray, .white, .blue, .cyan]
 
-var colorArray = []
+// var colorArray = []
 
-func createColors() -> [UIColor] {
+// func createColors() -> [UIColor] {
 
-}
+// }
 /*:
  **Task**: Create an even grid on the `canvas`, made out of squares that each are one third as wide and one third as high as the `canvas`.Use the same colors as in the picture (they are already defined for you above in the `colors` array):
  
