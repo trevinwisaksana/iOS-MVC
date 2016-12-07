@@ -28,12 +28,14 @@ let colors: [UIColor] = [.green, .gray, .purple, .yellow, .red, .orange, .lightG
  (Make sure to comment out the first implementation once you start working on the second one to avoid confusion.)
  */
 
-/* func creatingSquare(color: Int, positionX: Int, positionY: Int) {
+func creatingSquare(color: Int, positionX: Int, positionY: Int) {
     let sizeAndPosition = CGRect(x: positionX, y: positionY, width: Int((canvas.frame.size.width) * (1/3)), height: Int((canvas.frame.size.height) * (1/3)))
     let square = UIView(frame: sizeAndPosition)
     square.backgroundColor = colors[color]
     canvas.addSubview(square)
 }
+ 
+/*
 
 // Green Square
 creatingSquare(color: 0, positionX: 0, positionY: 0)
