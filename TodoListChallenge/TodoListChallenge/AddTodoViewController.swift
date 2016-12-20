@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
 
 protocol NewTaskDelegate {
     func addNewTask(task: Todo)
@@ -16,6 +18,10 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
     
     // Necessary objects
     
+    // Declaring a type Realm object to access Realm
+    let realm = try! Realm()
+
+    // Accessing the NewTaskDelegate by creating a delegate variable
     var delegate: NewTaskDelegate!
     
     // MARK: - IBOutlet
@@ -31,6 +37,11 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
         let newTodo = Todo(taskTitle: todoTitleTextField.text!, deadline: deadlineTextField.text!, state: .incomplete)
         delegate.addNewTask(task: newTodo)
         
+        // MARK: - Writing task to database
+        try! realm.write() {
+            // Saving the object
+            realm.add(newTodo)
+        }
     }
     
     override func viewDidLoad() {

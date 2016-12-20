@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DD054D5B1DEBC86E004A1E6E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD054D5A1DEBC86E004A1E6E /* TodoViewController.swift */; };
+		DD7A57331E08AD5A0056FBE5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7A57311E08AD5A0056FBE5 /* Realm.framework */; };
+		DD7A57341E08AD5A0056FBE5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7A57321E08AD5A0056FBE5 /* RealmSwift.framework */; };
 		DD9517011DED56AF004685FC /* CompletionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9517001DED56AF004685FC /* CompletionState.swift */; };
 		DDE19F861DEB5C42008C8609 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE19F851DEB5C42008C8609 /* AppDelegate.swift */; };
 		DDE19F8B1DEB5C42008C8609 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE19F891DEB5C42008C8609 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		DD054D5A1DEBC86E004A1E6E /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		DD7A57311E08AD5A0056FBE5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		DD7A57321E08AD5A0056FBE5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		DD9517001DED56AF004685FC /* CompletionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionState.swift; sourceTree = "<group>"; };
 		DDE19F821DEB5C42008C8609 /* TodoListChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE19F851DEB5C42008C8609 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7A57341E08AD5A0056FBE5 /* RealmSwift.framework in Frameworks */,
+				DD7A57331E08AD5A0056FBE5 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD7A572C1E08ACCD0056FBE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD7A57311E08AD5A0056FBE5 /* Realm.framework */,
+				DD7A57321E08AD5A0056FBE5 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDE19F791DEB5C42008C8609 = {
 			isa = PBXGroup;
 			children = (
 				DDE19F841DEB5C42008C8609 /* TodoListChallenge */,
 				DDE19F9C1DEB5C42008C8609 /* TodoListChallengeTests */,
 				DDE19F831DEB5C42008C8609 /* Products */,
+				DD7A572C1E08ACCD0056FBE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,9 +404,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9ME882KZTA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TodoListChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trevinwisaksana.TodoListChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trevinwisaksana.Flow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -401,9 +421,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9ME882KZTA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TodoListChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trevinwisaksana.TodoListChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trevinwisaksana.Flow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
